@@ -1,5 +1,5 @@
 import { useContext, useReducer, useState } from "react";
-import { BlogDataContext, BlogDispatchContext } from "./BlogsContextComponent";
+import { BlogDataContext, BlogDispatchContext, useBlogData, useBlogDispatch } from "./BlogsContextComponent";
 
 
 export default function BlogsList(props){
@@ -9,8 +9,10 @@ export default function BlogsList(props){
 	//const [blogState, blogDispatch] = useReducer(blogReducer, initialBlogData);
 
 	//    DataToAccess = useContext(DataBluePrint)
-	const blogsData = useContext(BlogDataContext)
-	const blogsDispatch = useContext(BlogDispatchContext);
+	// const blogsData = useContext(BlogDataContext)
+	// const blogsDispatch = useContext(BlogDispatchContext);
+	const blogsData = useBlogData();
+	const blogsDispatch = useBlogDispatch();
 
 	return (
 		<div>

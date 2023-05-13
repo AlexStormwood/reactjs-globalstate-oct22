@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 const initialBlogData = [
 	{
@@ -33,14 +33,28 @@ const blogReducer = (previousState, instructions) => {
 	}
 }
 
+//			DataBlueprintWeWantGlobally = createContext(someDefaultData)
 export const BlogDataContext = createContext(null);
 export const BlogDispatchContext = createContext(null);
 
+export function useBlogData() {
+	return useContext(BlogDataContext);
+}
+
+export function useBlogDispatch() {
+	return useContext(BlogDispatchContext);
+}
+
+
 export default function BlogsProvider(props){
+	//	  [DataToRead, DispatchToEditData]
 	const [blogsData, blogsDispatch] = useReducer(blogReducer, initialBlogData);
 
 	return(
-		<BlogDataContext.Provider value={blogsData}>
+		// Read data from this context:
+		<BlogDataContext.Provider value={blogsData}> 
+
+			{/* Edit data from this context: */}
 			<BlogDispatchContext.Provider value={blogsDispatch}>
 				{props.children}
 			</BlogDispatchContext.Provider>
