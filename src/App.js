@@ -1,12 +1,16 @@
+import { useState } from "react";
 import UserAuthInfo from "./components/UserAuthInfo";
 import UserContextComponent from "./components/UserContextComponent";
 import UserAuthContext, {defaultUserAuthInfo} from "./contexts/UserAuthContext";
 
 function App() {
+
+//	const [someState, setSomeState] = useState("")
+
   return (
     <div className="App">
 
-		{/* <UserAuthContext.Provider value={defaultUserAuthInfo} >
+		{/* <UserAuthContext.Provider value={{someStateRead: someState, someStateUpdate: setSomeState}} >
 
 			<UserAuthInfo />
 
