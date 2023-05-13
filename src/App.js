@@ -3,6 +3,7 @@ import UserAuthInfo from "./components/UserAuthInfo";
 import UserContextComponent from "./components/UserContextComponent";
 import UserAuthContext, {defaultUserAuthInfo} from "./contexts/UserAuthContext";
 import BlogsList from "./components/BlogsList";
+import BlogsProvider from "./components/BlogsContextComponent";
 
 function App() {
 
@@ -18,8 +19,10 @@ function App() {
 		</UserAuthContext.Provider> */}
 
 		<UserContextComponent>
-			<UserAuthInfo />
-			<BlogsList />
+			<BlogsProvider>
+				<UserAuthInfo />
+				<BlogsList />
+			</BlogsProvider>
 		</UserContextComponent>
 		
 
