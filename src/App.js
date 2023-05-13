@@ -2,6 +2,7 @@ import { useState } from "react";
 import UserAuthInfo from "./components/UserAuthInfo";
 import UserContextComponent from "./components/UserContextComponent";
 import UserAuthContext, {defaultUserAuthInfo} from "./contexts/UserAuthContext";
+import BlogsList from "./components/BlogsList";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
 
 		<UserContextComponent>
 			<UserAuthInfo />
+			<BlogsList />
 		</UserContextComponent>
 		
 
